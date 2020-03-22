@@ -2,7 +2,7 @@
 
 ## 介绍
 
-一个TabLayout控件，支持AndroidX，支持绑定ViewPager2，可设置消息数量。
+一个TabLayout控件，支持AndroidX，支持绑定ViewPager2，可设置角标。
 
 
 
