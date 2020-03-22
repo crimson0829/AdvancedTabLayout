@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <com.crimson.library.tab.AdvancedTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        app:tl_underline_height="1px"
+        app:tl_underline_color="#999999"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/colorPrimary"
+        app:tl_textUnselectColor="#333333"
+        app:tl_indicator_corner_radius="2dp"
+        app:tl_indicator_width="30dp"
+        app:tl_indicator_height="3dp"
+        app:tl_indicator_color="@color/colorPrimary"
+        app:tl_textsize="15sp"
+        android:layout_height="50dp" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+</LinearLayout>
