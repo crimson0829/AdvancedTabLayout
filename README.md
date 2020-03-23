@@ -20,7 +20,7 @@
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.1'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.2'	
 }
 	
 ```

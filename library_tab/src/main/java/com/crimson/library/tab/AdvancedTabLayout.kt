@@ -366,6 +366,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 } else {
                     if (mCurrentTab != position) {
                         mCurrentTab = position
+                        scrollToCurrentTab()
                         updateTabSelection(position)
                         onTabSelect.invoke(position)
                     } else {
@@ -472,7 +473,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 }
             }
         }
-        if (mVP2 == null) {
+        if (mViewPager2PageChangeCallback != null) {
             mViewPager2PageChangeCallback?.onPageScrolled(position, 0f, 0)
         }
     }
