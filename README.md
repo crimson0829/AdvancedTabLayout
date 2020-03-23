@@ -2,7 +2,7 @@
 
 ## 介绍
 
-一个TabLayout控件，支持AndroidX,支持绑定ViewPager2，可设置消息数量。
+一个TabLayout控件，支持AndroidX，支持绑定ViewPager2，可设置角标。
 
 
 
@@ -20,7 +20,7 @@
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.0'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.1'	
 }
 	
 ```
@@ -80,7 +80,7 @@ dependencies {
 
 
 | 属性                   | 定义                     |
-|:---------------------|:------------|:-----------------------|
+|:---------------------|:-----------------------|
 | tl_indicator_color       | 指示器颜色 |
 | tl_indicator_height       | 指示器高度 |
 | tl_indicator_width      | 指示器宽度                  |
