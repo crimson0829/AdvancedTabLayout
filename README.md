@@ -20,7 +20,7 @@
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.2'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.3'	
 }
 	
 ```
@@ -71,6 +71,10 @@ dependencies {
         }, {
             //tabReselect
         })
+
+
+    //如果想设置fragment缓存，可设置RecyclerView缓存，这样fragment加载后就不会被回收
+    (view_pager2.getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(fragments.size)
     
 
 ```

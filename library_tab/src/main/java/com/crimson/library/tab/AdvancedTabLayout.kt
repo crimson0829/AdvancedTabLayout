@@ -31,9 +31,9 @@ import java.util.*
  * 如不想关联Viewpager2 调用：setTabData()
  */
 class AdvancedTabLayout @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyleAttr: Int = 0
 ) : HorizontalScrollView(context, attrs, defStyleAttr) {
 
     companion object {
@@ -146,7 +146,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
 
         //get layout_height
         val height =
-            attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_height")
+                attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_height")
         when (height) {
             ViewGroup.LayoutParams.MATCH_PARENT.toString() + "" -> {
             }
@@ -162,108 +162,108 @@ class AdvancedTabLayout @JvmOverloads constructor(
     }
 
     private fun obtainAttributes(
-        context: Context,
-        attrs: AttributeSet?
+            context: Context,
+            attrs: AttributeSet?
     ) {
         val ta =
-            context.obtainStyledAttributes(attrs, R.styleable.AdvancedTabLayout)
+                context.obtainStyledAttributes(attrs, R.styleable.AdvancedTabLayout)
         mIndicatorStyle = ta.getInt(
-            R.styleable.AdvancedTabLayout_tl_indicator_style,
-            STYLE_NORMAL
+                R.styleable.AdvancedTabLayout_tl_indicator_style,
+                STYLE_NORMAL
         )
         mIndicatorColor = ta.getColor(
-            R.styleable.AdvancedTabLayout_tl_indicator_color,
-            Color.parseColor(if (mIndicatorStyle == STYLE_BLOCK) "#4B6A87" else "#ffffff")
+                R.styleable.AdvancedTabLayout_tl_indicator_color,
+                Color.parseColor(if (mIndicatorStyle == STYLE_BLOCK) "#4B6A87" else "#ffffff")
         )
         mIndicatorHeight = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_height,
-            dp2px(if (mIndicatorStyle == STYLE_TRIANGLE) 4f else (if (mIndicatorStyle == STYLE_BLOCK) -1f else 2f)).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_height,
+                dp2px(if (mIndicatorStyle == STYLE_TRIANGLE) 4f else (if (mIndicatorStyle == STYLE_BLOCK) -1f else 2f)).toFloat()
         )
         mIndicatorWidth = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_width,
-            dp2px(if (mIndicatorStyle == STYLE_TRIANGLE) 10f else (-1).toFloat()).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_width,
+                dp2px(if (mIndicatorStyle == STYLE_TRIANGLE) 10f else (-1).toFloat()).toFloat()
         )
         mIndicatorCornerRadius = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_corner_radius,
-            dp2px(if (mIndicatorStyle == STYLE_BLOCK) -1f else 0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_corner_radius,
+                dp2px(if (mIndicatorStyle == STYLE_BLOCK) -1f else 0f).toFloat()
         )
         indicatorMarginLeft = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_margin_left,
-            dp2px(0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_margin_left,
+                dp2px(0f).toFloat()
         )
         indicatorMarginTop = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_margin_top,
-            dp2px(if (mIndicatorStyle == STYLE_BLOCK) 7f else 0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_margin_top,
+                dp2px(if (mIndicatorStyle == STYLE_BLOCK) 7f else 0f).toFloat()
         )
         indicatorMarginRight = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_margin_right,
-            dp2px(0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_margin_right,
+                dp2px(0f).toFloat()
         )
         indicatorMarginBottom = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_indicator_margin_bottom,
-            dp2px(if (mIndicatorStyle == STYLE_BLOCK) 7f else 0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_indicator_margin_bottom,
+                dp2px(if (mIndicatorStyle == STYLE_BLOCK) 7f else 0f).toFloat()
         )
         mIndicatorGravity = ta.getInt(
-            R.styleable.AdvancedTabLayout_tl_indicator_gravity,
-            Gravity.BOTTOM
+                R.styleable.AdvancedTabLayout_tl_indicator_gravity,
+                Gravity.BOTTOM
         )
         mIndicatorWidthEqualTitle = ta.getBoolean(
-            R.styleable.AdvancedTabLayout_tl_indicator_width_equal_title,
-            false
+                R.styleable.AdvancedTabLayout_tl_indicator_width_equal_title,
+                false
         )
         mUnderlineColor = ta.getColor(
-            R.styleable.AdvancedTabLayout_tl_underline_color,
-            Color.parseColor("#ffffff")
+                R.styleable.AdvancedTabLayout_tl_underline_color,
+                Color.parseColor("#ffffff")
         )
         mUnderlineHeight = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_underline_height,
-            dp2px(0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_underline_height,
+                dp2px(0f).toFloat()
         )
         mUnderlineGravity = ta.getInt(
-            R.styleable.AdvancedTabLayout_tl_underline_gravity,
-            Gravity.BOTTOM
+                R.styleable.AdvancedTabLayout_tl_underline_gravity,
+                Gravity.BOTTOM
         )
         mDividerColor = ta.getColor(
-            R.styleable.AdvancedTabLayout_tl_divider_color,
-            Color.parseColor("#ffffff")
+                R.styleable.AdvancedTabLayout_tl_divider_color,
+                Color.parseColor("#ffffff")
         )
         mDividerWidth = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_divider_width,
-            dp2px(0f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_divider_width,
+                dp2px(0f).toFloat()
         )
         mDividerPadding = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_divider_padding,
-            dp2px(12f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_divider_padding,
+                dp2px(12f).toFloat()
         )
         mTextsize = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_textsize,
-            sp2px(14f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_textsize,
+                sp2px(14f).toFloat()
         )
         mTextSelectColor = ta.getColor(
-            R.styleable.AdvancedTabLayout_tl_textSelectColor,
-            Color.parseColor("#ffffff")
+                R.styleable.AdvancedTabLayout_tl_textSelectColor,
+                Color.parseColor("#ffffff")
         )
         mTextUnselectColor = ta.getColor(
-            R.styleable.AdvancedTabLayout_tl_textUnselectColor,
-            Color.parseColor("#AAffffff")
+                R.styleable.AdvancedTabLayout_tl_textUnselectColor,
+                Color.parseColor("#AAffffff")
         )
         mTextBold = ta.getInt(
-            R.styleable.AdvancedTabLayout_tl_textBold,
-            TEXT_BOLD_NONE
+                R.styleable.AdvancedTabLayout_tl_textBold,
+                TEXT_BOLD_NONE
         )
         mTextAllCaps =
-            ta.getBoolean(R.styleable.AdvancedTabLayout_tl_textAllCaps, false)
+                ta.getBoolean(R.styleable.AdvancedTabLayout_tl_textAllCaps, false)
         mTabSpaceEqual = ta.getBoolean(
-            R.styleable.AdvancedTabLayout_tl_tab_space_equal,
-            false
+                R.styleable.AdvancedTabLayout_tl_tab_space_equal,
+                false
         )
         mTabWidth = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_tab_width,
-            dp2px(-1f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_tab_width,
+                dp2px(-1f).toFloat()
         )
         mTabPadding = ta.getDimension(
-            R.styleable.AdvancedTabLayout_tl_tab_padding,
-            if (mTabSpaceEqual || mTabWidth > 0) dp2px(0f).toFloat() else dp2px(20f).toFloat()
+                R.styleable.AdvancedTabLayout_tl_tab_padding,
+                if (mTabSpaceEqual || mTabWidth > 0) dp2px(0f).toFloat() else dp2px(20f).toFloat()
         )
         ta.recycle()
     }
@@ -277,10 +277,10 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * @param titles tab标题
      */
     fun setViewPager2(
-        vp2: ViewPager2?,
-        fa: FragmentActivity?,
-        fragments: ArrayList<Fragment>?,
-        titles: List<String>?
+            vp2: ViewPager2?,
+            fa: FragmentActivity?,
+            fragments: ArrayList<Fragment>?,
+            titles: List<String>?
     ) {
 
         vp2?.also {
@@ -341,11 +341,11 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * 创建并添加tab
      */
     private fun addTab(
-        position: Int, title: String?, tabView: View
+            position: Int, title: String?, tabView: View
     ) {
 
         val tvTabTitle =
-            tabView.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
+                tabView.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
         tvTabTitle?.text = title ?: ""
 
         tabView.setOnClickListener { v ->
@@ -378,12 +378,12 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
         /** 每一个Tab的布局参数  */
         var lpTab = if (mTabSpaceEqual) LinearLayout.LayoutParams(
-            0,
-            LayoutParams.MATCH_PARENT,
-            1.0f
+                0,
+                LayoutParams.MATCH_PARENT,
+                1.0f
         ) else LinearLayout.LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.MATCH_PARENT
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT
         )
         if (mTabWidth > 0) {
             lpTab = LinearLayout.LayoutParams(mTabWidth.toInt(), LayoutParams.MATCH_PARENT)
@@ -396,7 +396,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
             val v = mTabsContainer.getChildAt(i)
             //            v.setPadding((int) mTabPadding, v.getPaddingTop(), (int) mTabPadding, v.getPaddingBottom());
             val tvTabTitle =
-                v?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
+                    v?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
 
             if (tvTabTitle != null) {
                 tvTabTitle.setTextColor(if (i == mCurrentTab) mTextSelectColor else mTextUnselectColor)
@@ -404,8 +404,8 @@ class AdvancedTabLayout @JvmOverloads constructor(
                     tvTabTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextsize)
                 } else {
                     tvTabTitle.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        if (i == mCurrentTab) sp2px(18f).toFloat() else mTextsize
+                            TypedValue.COMPLEX_UNIT_PX,
+                            if (i == mCurrentTab) sp2px(18f).toFloat() else mTextsize
                     )
                 }
                 tvTabTitle.setPadding(mTabPadding.toInt(), 0, mTabPadding.toInt(), 0)
@@ -416,6 +416,9 @@ class AdvancedTabLayout @JvmOverloads constructor(
                     tvTabTitle.paint.isFakeBoldText = true
                 } else if (mTextBold == TEXT_BOLD_NONE) {
                     tvTabTitle.paint.isFakeBoldText = false
+                } else if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
+                    tvTabTitle.paint.isFakeBoldText = i == mCurrentTab
+
                 }
             }
         }
@@ -457,15 +460,15 @@ class AdvancedTabLayout @JvmOverloads constructor(
             val tabView = mTabsContainer?.getChildAt(i)
             val isSelect = i == position
             val tabTitle =
-                tabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
+                    tabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
             if (tabTitle != null) {
                 tabTitle.setTextColor(if (isSelect) mTextSelectColor else mTextUnselectColor)
                 if (mTextBold == TEXT_BOLD_BOTH) {
                     tabTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextsize)
                 } else {
                     tabTitle.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        if (isSelect) sp2px(18f).toFloat() else mTextsize
+                            TypedValue.COMPLEX_UNIT_PX,
+                            if (isSelect) sp2px(18f).toFloat() else mTextsize
                     )
                 }
                 if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
@@ -488,7 +491,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         //for mIndicatorWidthEqualTitle
         if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
             val tabTitle =
-                currentTabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
+                    currentTabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
             mTextPaint.textSize = mTextsize
             val textWidth = mTextPaint.measureText(tabTitle?.text.toString())
             margin = (right - left - textWidth) / 2
@@ -503,10 +506,10 @@ class AdvancedTabLayout @JvmOverloads constructor(
             //for mIndicatorWidthEqualTitle
             if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
                 val nextTabTitle =
-                    nextTabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
+                        nextTabView?.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
                 mTextPaint.textSize = mTextsize
                 val nextTextWidth =
-                    mTextPaint.measureText(nextTabTitle?.text.toString())
+                        mTextPaint.measureText(nextTabTitle?.text.toString())
                 val nextMargin = (nextTabRight - nextTabLeft - nextTextWidth) / 2
                 margin += mCurrentPositionOffset * (nextMargin - margin)
             }
@@ -523,7 +526,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         if (mIndicatorWidth < 0) {   //indicatorWidth小于0时,原jpardogo's PagerSlidingTabStrip
         } else { //indicatorWidth大于0时,圆角矩形以及三角形
             var indicatorLeft =
-                currentTabView.left + (currentTabView.width - mIndicatorWidth) / 2
+                    currentTabView.left + (currentTabView.width - mIndicatorWidth) / 2
             if (mCurrentTab < tabCount - 1) {
                 val nextTab = mTabsContainer.getChildAt(mCurrentTab + 1)
                 indicatorLeft += mCurrentPositionOffset * (currentTabView.width / 2 + nextTab.width / 2)
@@ -547,11 +550,11 @@ class AdvancedTabLayout @JvmOverloads constructor(
             for (i in 0 until tabCount - 1) {
                 val tab = mTabsContainer.getChildAt(i)
                 canvas.drawLine(
-                    paddingLeft + tab.right.toFloat(),
-                    mDividerPadding,
-                    paddingLeft + tab.right.toFloat(),
-                    height - mDividerPadding,
-                    mDividerPaint
+                        paddingLeft + tab.right.toFloat(),
+                        mDividerPadding,
+                        paddingLeft + tab.right.toFloat(),
+                        height - mDividerPadding,
+                        mDividerPaint
                 )
             }
         }
@@ -561,19 +564,19 @@ class AdvancedTabLayout @JvmOverloads constructor(
             mRectPaint.color = mUnderlineColor
             if (mUnderlineGravity == Gravity.BOTTOM) {
                 canvas.drawRect(
-                    paddingLeft.toFloat(),
-                    height - mUnderlineHeight,
-                    mTabsContainer.width + paddingLeft.toFloat(),
-                    height.toFloat(),
-                    mRectPaint
+                        paddingLeft.toFloat(),
+                        height - mUnderlineHeight,
+                        mTabsContainer.width + paddingLeft.toFloat(),
+                        height.toFloat(),
+                        mRectPaint
                 )
             } else {
                 canvas.drawRect(
-                    paddingLeft.toFloat(),
-                    0f,
-                    mTabsContainer.width + paddingLeft.toFloat(),
-                    mUnderlineHeight,
-                    mRectPaint
+                        paddingLeft.toFloat(),
+                        0f,
+                        mTabsContainer.width + paddingLeft.toFloat(),
+                        mUnderlineHeight,
+                        mRectPaint
                 )
             }
         }
@@ -586,8 +589,8 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 mTrianglePath.reset()
                 mTrianglePath.moveTo(paddingLeft + mIndicatorRect.left.toFloat(), height.toFloat())
                 mTrianglePath.lineTo(
-                    paddingLeft + mIndicatorRect.left / 2 + (mIndicatorRect.right / 2).toFloat(),
-                    height - mIndicatorHeight
+                        paddingLeft + mIndicatorRect.left / 2 + (mIndicatorRect.right / 2).toFloat(),
+                        height - mIndicatorHeight
                 )
                 mTrianglePath.lineTo(paddingLeft + mIndicatorRect.right.toFloat(), height.toFloat())
                 mTrianglePath.close()
@@ -603,10 +606,10 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 }
                 mIndicatorDrawable.setColor(mIndicatorColor)
                 mIndicatorDrawable.setBounds(
-                    paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
-                    indicatorMarginTop.toInt(),
-                    (paddingLeft + mIndicatorRect.right - indicatorMarginRight).toInt(),
-                    (indicatorMarginTop + mIndicatorHeight).toInt()
+                        paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
+                        indicatorMarginTop.toInt(),
+                        (paddingLeft + mIndicatorRect.right - indicatorMarginRight).toInt(),
+                        (indicatorMarginTop + mIndicatorHeight).toInt()
                 )
                 mIndicatorDrawable.cornerRadius = mIndicatorCornerRadius
                 mIndicatorDrawable.draw(canvas)
@@ -620,17 +623,17 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 mIndicatorDrawable.setColor(mIndicatorColor)
                 if (mIndicatorGravity == Gravity.BOTTOM) {
                     mIndicatorDrawable.setBounds(
-                        paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
-                        height - mIndicatorHeight.toInt() - indicatorMarginBottom.toInt(),
-                        paddingLeft + mIndicatorRect.right - indicatorMarginRight.toInt(),
-                        height - indicatorMarginBottom.toInt()
+                            paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
+                            height - mIndicatorHeight.toInt() - indicatorMarginBottom.toInt(),
+                            paddingLeft + mIndicatorRect.right - indicatorMarginRight.toInt(),
+                            height - indicatorMarginBottom.toInt()
                     )
                 } else {
                     mIndicatorDrawable.setBounds(
-                        paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
-                        indicatorMarginTop.toInt(),
-                        paddingLeft + mIndicatorRect.right - indicatorMarginRight.toInt(),
-                        mIndicatorHeight.toInt() + indicatorMarginTop.toInt()
+                            paddingLeft + indicatorMarginLeft.toInt() + mIndicatorRect.left,
+                            indicatorMarginTop.toInt(),
+                            paddingLeft + mIndicatorRect.right - indicatorMarginRight.toInt(),
+                            mIndicatorHeight.toInt() + indicatorMarginTop.toInt()
                     )
                 }
                 mIndicatorDrawable.cornerRadius = mIndicatorCornerRadius
@@ -702,8 +705,8 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * tab选中监听
      */
     fun setOnTabSelectListener(
-        tabSelect: (Int) -> Unit = {},
-        tabReselect: (Int) -> Unit = {}
+            tabSelect: (Int) -> Unit = {},
+            tabReselect: (Int) -> Unit = {}
     ): AdvancedTabLayout {
         onTabSelect = tabSelect
         onTabReselect = tabReselect
@@ -714,9 +717,9 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * viewPager2监听
      */
     fun setViewPage2ScrollListener(
-        onPageSelected: (position: Int) -> Unit = { _ -> },
-        onPageScrolled: (position: Int, positionOffset: Float, positionOffsetPixels: Int) -> Unit = { _, _, _ -> },
-        onPageScrollStateChanged: (state: Int) -> Unit = { _ -> }
+            onPageSelected: (position: Int) -> Unit = { _ -> },
+            onPageScrolled: (position: Int, positionOffset: Float, positionOffsetPixels: Int) -> Unit = { _, _, _ -> },
+            onPageScrollStateChanged: (state: Int) -> Unit = { _ -> }
     ): AdvancedTabLayout {
         mVP2OnPageSelected = onPageSelected
         mVP2OnPageScrolled = onPageScrolled
@@ -755,7 +758,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
         val tabView = mTabsContainer.getChildAt(position)
         val tipView =
-            tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
+                tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
         if (tipView != null) {
             tipView.show(num)
             if (mInitSetMap[position]) {
@@ -789,7 +792,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
         val tabView = mTabsContainer.getChildAt(position)
         val tipView =
-            tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
+                tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
         tipView?.visibility = View.GONE
     }
 
@@ -797,9 +800,9 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * 设置未读消息偏移,原点为文字的右上角.当控件高度固定,消息提示位置易控制,显示效果佳
      */
     fun setMsgMargin(
-        position: Int,
-        leftPadding: Float,
-        bottomPadding: Float
+            position: Int,
+            leftPadding: Float,
+            bottomPadding: Float
     ) {
         var position = position
         if (position >= tabCount) {
@@ -807,20 +810,20 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
         val tabView = mTabsContainer.getChildAt(position)
         val tipView =
-            tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
+                tabView.findViewById<View>(R.id.rtv_msg_tip) as? MsgView
         if (tipView != null) {
             val tvTabTitle =
-                tabView.findViewById<View>(R.id.tv_tab_title) as AppCompatTextView
+                    tabView.findViewById<View>(R.id.tv_tab_title) as AppCompatTextView
             mTextPaint.textSize = mTextsize
             val textWidth = mTextPaint.measureText(tvTabTitle.text.toString())
             val textHeight = mTextPaint.descent() - mTextPaint.ascent()
             val lp = tipView.layoutParams as MarginLayoutParams
             lp.leftMargin =
-                if (mTabWidth >= 0) (mTabWidth / 2 + textWidth / 2 + dp2px(leftPadding)).toInt() else (mTabPadding + textWidth + dp2px(
-                    leftPadding
-                )).toInt()
+                    if (mTabWidth >= 0) (mTabWidth / 2 + textWidth / 2 + dp2px(leftPadding)).toInt() else (mTabPadding + textWidth + dp2px(
+                            leftPadding
+                    )).toInt()
             lp.topMargin =
-                if (mHeight > 0) (mHeight - textHeight).toInt() / 2 - dp2px(bottomPadding) else 0
+                    if (mHeight > 0) (mHeight - textHeight).toInt() / 2 - dp2px(bottomPadding) else 0
             tipView.layoutParams = lp
         }
 
@@ -874,8 +877,8 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * ViewPager2适配器
      */
     internal inner class ViewPager2FragmentAdapter(
-        fa: FragmentActivity,
-        val fragments: MutableList<Fragment>
+            fa: FragmentActivity,
+            val fragments: MutableList<Fragment>
     ) : FragmentStateAdapter(fa) {
 
         override fun getItemCount(): Int {
@@ -901,9 +904,9 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
 
         override fun onPageScrolled(
-            position: Int,
-            positionOffset: Float,
-            positionOffsetPixels: Int
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
         ) {
             super.onPageScrolled(position, positionOffset, positionOffsetPixels)
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.crimson.library.tab.attrs.DividerAttrs
 import com.crimson.library.tab.attrs.IndicatorAttrs
 import com.crimson.library.tab.attrs.TabAttrs
@@ -57,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             Log.w(TAG, "state -> $it")
 
         })
+
+        (view_pager2.getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(fragments.size)
 
 
 
