@@ -2,7 +2,7 @@
 
 ## 介绍
 
-Tab 控件，支持AndroidX，支持绑定ViewPager2
+TabLayout 控件，支持AndroidX，支持绑定ViewPager2，可设置指示器、下划线、tab分割线，tab字体大小，使用方便。
 
 
 
@@ -62,6 +62,9 @@ dependencies {
             //state
 
         })
+	
+    //如果想设置fragment缓存，可设置RecyclerView缓存，这样fragment加载后就不会被回收
+    (view_pager2.getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(fragments.size)
 
     // 只设置TabLayout标题
     tab_layout.setTabData(listOf(content, content, content))
@@ -74,8 +77,7 @@ dependencies {
         })
 
 
-    //如果想设置fragment缓存，可设置RecyclerView缓存，这样fragment加载后就不会被回收
-    (view_pager2.getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(fragments.size)
+   
     
 
 ```
