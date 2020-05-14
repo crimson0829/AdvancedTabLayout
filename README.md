@@ -20,7 +20,7 @@ Tab 控件，支持AndroidX，支持绑定ViewPager2
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.3'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.4'	
 }
 	
 ```
@@ -43,6 +43,7 @@ dependencies {
            app:tl_indicator_height="3dp"
            app:tl_indicator_color="@color/colorPrimary"
            app:tl_textsize="15sp"
+           app:tl_textSelectSize="15sp"
            android:layout_height="50dp" />
 ```
 
@@ -106,6 +107,7 @@ dependencies {
 | tl_tab_space_equal                     | tab是否相等                 |
 | tl_tab_width                  | tab宽度                |
 | tl_textsize                     | tab字体大小                  |
+| tl_textSelectSize                     | tab选中字体大小                  |
 | tl_textSelectColor                   | tab选中字体颜色               |
 | tl_textUnselectColor                       | tab未选中字体颜色                  |
 | tl_textBold                       | tab字体加粗 -> 0:不加粗 1：选中加粗 2：都加粗                |

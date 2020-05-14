@@ -13,9 +13,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
+import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.crimson.library.tab.attrs.DividerAttrs
@@ -110,6 +112,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
      * tab text
      */
     private var mTextsize = 0f
+    private var mSelectTextSize = 0f
     private var mTextSelectColor = 0
     private var mTextUnselectColor = 0
     private var mTextBold = 0
@@ -239,6 +242,11 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 R.styleable.AdvancedTabLayout_tl_textsize,
                 sp2px(14f).toFloat()
         )
+
+        mSelectTextSize = ta.getDimension(
+                R.styleable.AdvancedTabLayout_tl_textSelectSize,
+                sp2px(18f).toFloat()
+        )
         mTextSelectColor = ta.getColor(
                 R.styleable.AdvancedTabLayout_tl_textSelectColor,
                 Color.parseColor("#ffffff")
@@ -299,6 +307,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         }
 
         titles?.let {
+            mTitles.clear()
             mTitles.addAll(titles)
         }
 
@@ -310,6 +319,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
      */
     fun setTabData(titles: List<String>?) {
         titles?.let {
+            mTitles.clear()
             mTitles.addAll(titles)
         }
         notifyData()
@@ -405,7 +415,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 } else {
                     tvTabTitle.setTextSize(
                             TypedValue.COMPLEX_UNIT_PX,
-                            if (i == mCurrentTab) sp2px(18f).toFloat() else mTextsize
+                            if (i == mCurrentTab) mSelectTextSize else mTextsize
                     )
                 }
                 tvTabTitle.setPadding(mTabPadding.toInt(), 0, mTabPadding.toInt(), 0)
@@ -468,7 +478,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
                 } else {
                     tabTitle.setTextSize(
                             TypedValue.COMPLEX_UNIT_PX,
-                            if (isSelect) sp2px(18f).toFloat() else mTextsize
+                            if (isSelect) mSelectTextSize else mTextsize
                     )
                 }
                 if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
@@ -650,6 +660,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         mTabSpaceEqual = attrs.space_equal
         mTabWidth = dp2px(attrs.width.toFloat()).toFloat()
         mTextsize = sp2px(attrs.textsize.toFloat()).toFloat()
+        mSelectTextSize = sp2px(attrs.textSelectSize.toFloat()).toFloat()
         mTextSelectColor = attrs.textSelectColor
         mTextUnselectColor = attrs.textUnselectColor
         mTextBold = attrs.textBold
@@ -736,6 +747,10 @@ class AdvancedTabLayout @JvmOverloads constructor(
         updateTabSelection(currentTab)
     }
 
+    /**
+     * 根据索引获取tab view
+     */
+    fun getTabView(position: Int) = mTabsContainer.getChildAt(position)
 
     /**
      * 根据索引获取title view
@@ -744,6 +759,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         val tabView = mTabsContainer.getChildAt(tab)
         return tabView.findViewById<View>(R.id.tv_tab_title) as? AppCompatTextView
     }
+
 
     /**
      * 显示未读消息
@@ -841,6 +857,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         return tabView.findViewById<View>(R.id.rtv_msg_tip) as MsgView
     }
 
+    fun getTabCount() = tabCount
 
     override fun onSaveInstanceState(): Parcelable? {
         val bundle = Bundle()
@@ -889,6 +906,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
             return fragments[position]
 
         }
+
 
     }
 

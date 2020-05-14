@@ -37,6 +37,7 @@
     <attr name="tl_textSelectColor" format="color" />
     <attr name="tl_textUnselectColor" format="color" />
     <attr name="tl_textsize" format="dimension" />
+    <attr name="tl_textSelectSize" format="dimension" />
     <attr name="tl_underline_color" format="color" />
     <attr name="tl_underline_gravity" format="enum">
         <enum name="TOP" value="48" />
@@ -75,6 +76,7 @@
         <attr name="tl_tab_space_equal" />
         <attr name="tl_tab_width" />
         <attr name="tl_textsize" />
+        <attr name="tl_textSelectSize" />
         <attr name="tl_textSelectColor" />
         <attr name="tl_textUnselectColor" />
         <attr name="tl_textBold" />
