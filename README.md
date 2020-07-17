@@ -20,7 +20,7 @@ TabLayout 控件，支持AndroidX，支持绑定ViewPager2，可设置指示器�
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.4'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.5'	
 }
 	
 ```
