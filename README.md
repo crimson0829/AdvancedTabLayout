@@ -33,6 +33,8 @@ dependencies {
      <com.crimson.library.tab.AdvancedTabLayout
            android:id="@+id/tab_layout"
            android:layout_width="match_parent"
+           android:layout_height="50dp"
+           app:tl_smoothScroll_enable="true"
            app:tl_underline_height="1px"
            app:tl_underline_color="#999999"
            app:tl_textBold="SELECT"
@@ -44,7 +46,7 @@ dependencies {
            app:tl_indicator_color="@color/colorPrimary"
            app:tl_textsize="15sp"
            app:tl_textSelectSize="15sp"
-           android:layout_height="50dp" />
+            />
 ```
 
 
@@ -106,6 +108,7 @@ dependencies {
 | tl_tab_padding                     | tab padding                   |
 | tl_tab_space_equal                     | tab是否相等                 |
 | tl_tab_width                  | tab宽度                |
+| tl_smoothScroll_enable                  | tab点击是否平滑滑动                |
 | tl_textsize                     | tab字体大小                  |
 | tl_textSelectSize                     | tab选中字体大小                  |
 | tl_textSelectColor                   | tab选中字体颜色               |

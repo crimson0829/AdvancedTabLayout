@@ -19,7 +19,7 @@ class ContentFragment(val content: String = ContentFragment::class.java.simpleNa
         super.onViewCreated(view, savedInstanceState)
 
 
-        tab_layout.setTabData(listOf(content, content, content))
+        tab_layout.setTabData(listOf(content, content, content,content,content,content))
         tab_layout.showDot(0)
         tab_layout.showMsg(1, 10)
         tab_layout.setMsgMargin(1, 30f, 5f)

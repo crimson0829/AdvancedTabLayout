@@ -12,6 +12,7 @@
     <com.crimson.library.tab.AdvancedTabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
+        app:tl_smoothScroll_enable="false"
         app:tl_underline_height="1px"
         app:tl_underline_color="#999999"
         app:tl_textBold="SELECT"

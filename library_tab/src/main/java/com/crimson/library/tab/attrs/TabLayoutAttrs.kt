@@ -21,7 +21,8 @@ data class TabAttrs(
         var textSelectColor: Int = Color.parseColor("#ffffff"),
         var textUnselectColor: Int = Color.parseColor("#AAffffff"),
         var textBold: Int = 0,
-        val textAllCaps: Boolean = false
+        val textAllCaps: Boolean = false,
+        var smooth_scroll_enable: Boolean = true
 )
 
 
