@@ -84,12 +84,12 @@ dependencies {
 
 
      //设置tab属性
-//        tab_layout.setTabAttrs(TabAttrs().apply {
-//            textSelectColor=ContextCompat.getColor(baseContext,R.color.colorPrimary)
-               // tab点击是否马上切换，那么smoothscroll将失效
-//            snap_tab_click=true
-//            ...
-//        })
+//   tab_layout.setTabAttrs(TabAttrs().apply {
+//       textSelectColor=ContextCompat.getColor(baseContext,R.color.colorPrimary)
+//       // tab点击是否马上切换，如果设置成true,那么smoothscroll将失效
+//       snap_tab_click=true
+//       ...
+//    })
    
     
 
