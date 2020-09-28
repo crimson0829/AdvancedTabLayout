@@ -64,9 +64,6 @@ dependencies {
             //state
 
         })
-	
-    //如果想设置fragment缓存，可设置RecyclerView缓存，这样fragment加载后就不会被回收
-    (view_pager2.getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(fragments.size)
 
     // 只设置TabLayout标题
     tab_layout.setTabData(listOf(content, content, content))
