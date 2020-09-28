@@ -18,11 +18,12 @@ data class TabAttrs(
         var space_equal: Boolean = false,
         var textsize: Int = 14,
         var textSelectSize: Int = 18,
-        var textSelectColor: Int = Color.parseColor("#ffffff"),
-        var textUnselectColor: Int = Color.parseColor("#AAffffff"),
+        var textSelectColor: Int = Color.parseColor("#cccccc"),
+        var textUnselectColor: Int = Color.parseColor("#333333"),
         var textBold: Int = 0,
         val textAllCaps: Boolean = false,
-        var smooth_scroll_enable: Boolean = true
+        var smooth_scroll_enable: Boolean = true,
+        var snap_tab_click: Boolean = false
 )
 
 

@@ -20,7 +20,7 @@ TabLayout 控件，支持AndroidX，支持绑定ViewPager2，可设置指示器�
 ```
 dependencies {
             
-    implementation 'com.github.crimson0829:AdvancedTabLayout:1.5'	
+    implementation 'com.github.crimson0829:AdvancedTabLayout:1.6'	
 }
 	
 ```
@@ -79,6 +79,17 @@ dependencies {
         })
 
 
+      //设置viewpager2 条目缓存数量
+     tab_layout.setViewPager2ItemCacheSize(fragment.size())
+
+
+     //设置tab属性
+//        tab_layout.setTabAttrs(TabAttrs().apply {
+//            textSelectColor=ContextCompat.getColor(baseContext,R.color.colorPrimary)
+               // tab点击是否马上切换，那么smoothscroll将失效
+//            snap_tab_click=true
+//            ...
+//        })
    
     
 
@@ -111,6 +122,7 @@ dependencies {
 | tl_tab_space_equal                     | tab是否相等                 |
 | tl_tab_width                  | tab宽度                |
 | tl_smoothScroll_enable                  | tab点击是否平滑滑动                |
+| tl_tab_snapOnClick                  | tab点击是否与viewpager2马上切换             |
 | tl_textsize                     | tab字体大小                  |
 | tl_textSelectSize                     | tab选中字体大小                  |
 | tl_textSelectColor                   | tab选中字体颜色               |

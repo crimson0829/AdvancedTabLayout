@@ -16,6 +16,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.crimson.library.tab.attrs.DividerAttrs
@@ -77,6 +78,10 @@ class AdvancedTabLayout @JvmOverloads constructor(
     private var mTabWidth = 0f
     private var mSmoothScrollEnable = true
 
+    //如果该值为true，则mSmoothScrollEnable失效
+    private var mSnapOnTabClick = false
+
+
     /**
      * indicator
      */
@@ -117,7 +122,6 @@ class AdvancedTabLayout @JvmOverloads constructor(
     private var mTextBold = 0
     private var mTextAllCaps = false
 
-    private var mSnapOnTabClick = false
     private var mLastScrollX = 0
     private var mHeight = 0
 
@@ -253,7 +257,9 @@ class AdvancedTabLayout @JvmOverloads constructor(
             R.styleable.AdvancedTabLayout_tl_tab_padding,
             if (mTabSpaceEqual || mTabWidth > 0) dp2px(0f).toFloat() else dp2px(20f).toFloat()
         )
-
+        mSnapOnTabClick = ta.getBoolean(
+            R.styleable.AdvancedTabLayout_tl_tab_snapOnClick, false
+        )
         mSmoothScrollEnable = ta.getBoolean(
             R.styleable.AdvancedTabLayout_tl_smoothScroll_enable, true
         )
@@ -655,6 +661,7 @@ class AdvancedTabLayout @JvmOverloads constructor(
         mTextUnselectColor = attrs.textUnselectColor
         mTextBold = attrs.textBold
         mTextAllCaps = attrs.textAllCaps
+        mSnapOnTabClick = attrs.snap_tab_click
         invalidate()
         return this
     }
@@ -731,10 +738,19 @@ class AdvancedTabLayout @JvmOverloads constructor(
     /**
      * 选中当前tab
      */
-    fun setCurrentTab(currentTab: Int, smoothScroll: Boolean) {
+    fun setCurrentTab(currentTab: Int, smoothScroll: Boolean = true) {
         mCurrentTab = currentTab
         mVP2?.setCurrentItem(currentTab, smoothScroll)
         updateTabSelection(currentTab)
+    }
+
+    /**
+     * 设置viewpager2 条目缓存数量
+     */
+    fun setViewPager2ItemCacheSize(cacheSize:Int){
+        mVP2?.apply {
+            (getChildAt(0) as? RecyclerView)?.setItemViewCacheSize(cacheSize)
+        }
     }
 
     /**

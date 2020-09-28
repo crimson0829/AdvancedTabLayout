@@ -28,6 +28,7 @@
     <attr name="tl_tab_padding" format="dimension" />
     <attr name="tl_tab_space_equal" format="boolean" />
     <attr name="tl_tab_width" format="dimension" />
+    <attr name="tl_tab_snapOnClick" format="boolean" />
     <attr name="tl_smoothScroll_enable" format="boolean" />
     <attr name="tl_textAllCaps" format="boolean" />
     <attr name="tl_textBold" format="enum">
@@ -78,6 +79,7 @@
         <attr name="tl_tab_padding" />
         <attr name="tl_tab_space_equal" />
         <attr name="tl_tab_width" />
+        <attr name="tl_tab_snapOnClick" />
         <attr name="tl_textsize" />
         <attr name="tl_textSelectSize" />
         <attr name="tl_textSelectColor" />
